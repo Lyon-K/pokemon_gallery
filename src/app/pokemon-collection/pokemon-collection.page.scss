@@ -1,0 +1,12 @@
+#pokemonGallery {
+  display: flex;
+  overflow: none;
+  flex-wrap: wrap;
+}
+
+#pokemonContainer {
+  border: 1px grey solid;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 5px;
+}

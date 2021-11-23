@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pokemon-collection</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list id="pokemonGallery">
+    <ion-item id="pokemonContainer" *ngFor="let card of pokemonCards">
+      <a [routerLink]="['details', card.id]">
+        <ion-label>
+          <img src="{{card.photo}}" alt="{{card.name}} picture"/>
+          <ion-text>
+            <h2>{{card.name}}</h2>
+          </ion-text>
+        </ion-label>
+      </a>
+    </ion-item>
+  </ion-list>
+  <button (click)="getPokemonCards()">LOAD MORE</button>
+  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

@@ -7,6 +7,18 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'pokemon-detail',
+    loadChildren: () => import('./pokemon-detail/pokemon-detail.module').then( m => m.PokemonDetailPageModule)
+  },
+  {
+    path: 'pokemon-collection',
+    loadChildren: () => import('./pokemon-collection/pokemon-collection.module').then( m => m.PokemonCollectionPageModule)
+  },
+  {
+    path: 'pokemon-collection/details/:id',
+    loadChildren: () => import('./pokemon-collection/details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

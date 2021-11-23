@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/pokemon-collection"></ion-back-button>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Name: {{name}}</h1>
+  <ion-slides pager="true" [options]="slideOpts" style="height: 50vh">
+    <ion-slide *ngFor="let image of images">
+      <img src="{{image}}" alt="A {{image}}"/>
+    </ion-slide>
+  </ion-slides>
+  <div id="socialSharing">
+    <ion-button expands="full" (click)="shareTwitter()">Share on Twitter</ion-button>
+    <ion-button expands="full" (click)="shareEmail()">Share on Email</ion-button>
+    <ion-button expands="full" (click)="shareFacebook()">Share on Facebook</ion-button>
+    <ion-button expands="full" (click)="shareWhatsapp()">Share on Whatsapp</ion-button>
+  </div>
+  <div id="movesContainer">
+    <ion-text>
+      <h2>Moves:</h2>
+      <div *ngFor="let move of moves">
+        {{move[0]}} (api: <a href="{{move[1]}}">More Info</a>)
+      </div>
+    </ion-text>
+  </div>
+</ion-content>
